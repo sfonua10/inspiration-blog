@@ -9,6 +9,9 @@ const PostHeadingLink = styled(Link)`
   text-decoration: none;
   color: #212225;
   font-size: 1.125rem;
+  &:hover h3{
+    color: rgb(22, 123, 156);
+  }
 `
 
 const PostPreview = ({ post }) => {
@@ -16,7 +19,7 @@ const PostPreview = ({ post }) => {
     <article
       css={css`
         border-bottom: 1px solid #ddd;
-        margin-top: 0;
+        margin-top: 1rem;
         padding-bottom: 1rem;
 
         :first-of-type {
