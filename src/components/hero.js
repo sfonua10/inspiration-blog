@@ -62,9 +62,9 @@ const Hero = () => {
     <ImageBackground Tag="section" fluid={image.sharp.fluid} fadeIn="soft">
       <TextBox>
         <h1>Gospel Inspriation Blog</h1>
-        <p>
+        {/* <p>
           Hello Utah <Link to="/about">Learn about me &rarr;</Link>
-        </p>
+        </p> */}
       </TextBox>
     </ImageBackground>
   )

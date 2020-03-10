@@ -4,6 +4,7 @@ import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import ReadLink from "../components/read-link"
 import parse from "html-react-parser"
+import Img from "gatsby-image"
 
 export const query = graphql`
   query($slug: String!) {
@@ -16,6 +17,13 @@ export const query = graphql`
         current
       }
       description
+      image {
+        asset {
+          fluid{
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
   }
 `
@@ -32,6 +40,8 @@ const PostTemplate = ({ data: { sanityProject: post } }) => {
       >
         Posted by {post.author.name}
       </p>
+      <br />
+      {post.image && <Img fluid={post.image.asset.fluid} alt={post.title}/>}
       <br />
       <p>{parse(htmlDescription)}</p>
       <ReadLink to="/">&larr; back to all posts</ReadLink>
