@@ -5,7 +5,7 @@ import Header from "../components/header"
 import useSiteMetadata from "../hooks/use-sitemetadata"
 
 const Layout = ({ children }) => {
-  const { title, description } = useSiteMetadata();
+  const { title, description } = useSiteMetadata()
   return (
     <>
       <Global
@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
             margin: 0;
           }
 
-          ${'' /* * + * {
+          ${"" /* * + * {
             margin-top: 1rem;
           } */}
 
@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
         css={css`
           margin: 2rem auto 4rem;
           max-width: 90vw;
-          width: 550px;
+          width: 720px;
         `}
       >
         {children}

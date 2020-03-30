@@ -9,9 +9,6 @@ const PostHeadingLink = styled(Link)`
   text-decoration: none;
   color: #212225;
   font-size: 1.125rem;
-  &:hover h3{
-    color: rgb(22, 123, 156);
-  }
 `
 
 const PostPreview = ({ post }) => {
@@ -21,9 +18,22 @@ const PostPreview = ({ post }) => {
         border-bottom: 1px solid #ddd;
         margin-top: 1rem;
         padding-bottom: 1rem;
-
+        font-family: inherit;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        padding: 15px;
         :first-of-type {
           margin-top: 1rem;
+        }
+        :hover {
+          transform: translateY(-0.25rem);
+          box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 8px,
+            rgba(71, 63, 79, 0.16) 0px 8px 16px;
+          transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+            box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+            padding 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
         }
       `}
     >
