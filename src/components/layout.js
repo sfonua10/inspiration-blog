@@ -1,7 +1,7 @@
 import React from "react"
 import { Global, css } from "@emotion/core"
 import Helmet from "react-helmet"
-import Header from "../components/header"
+// import Header from "../components/header"
 import useSiteMetadata from "../hooks/use-sitemetadata"
 
 const Layout = ({ children }) => {
@@ -62,7 +62,6 @@ const Layout = ({ children }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
-      <Header />
       <main
         css={css`
           margin: 2rem auto 4rem;
