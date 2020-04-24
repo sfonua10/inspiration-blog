@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import ReadLink from "../components/read-link"
 import Img from "gatsby-image"
 import Header from "../components/header"
-// import BlockContent = from '@sanity/block-content-to-react';
+import PortableText from "@sanity/block-content-to-react"
 
 export const query = graphql`
   query($slug: String!) {
@@ -30,8 +30,6 @@ export const query = graphql`
 `
 
 const PostTemplate = ({ data: { sanityProject: post } }) => {
-  // const htmlDescription = post.description.split("\n").join("<br />")
-  console.log("post", post)
   return (
     <>
       <Header />
@@ -47,9 +45,7 @@ const PostTemplate = ({ data: { sanityProject: post } }) => {
         <br />
         {post.image && <Img fluid={post.image.asset.fluid} alt={post.title} />}
         <br />
-        {post._rawDescription.map(content => (
-          <pre>{JSON.stringify(content, null, 2)}</pre>
-        ))}
+        <PortableText blocks={post._rawDescription} projectId={"yxxgm8gx"} dataset={"Production"} />
         <ReadLink to="/">&larr; back to all posts</ReadLink>
       </Layout>
     </>
